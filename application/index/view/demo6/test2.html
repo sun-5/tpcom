@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test2模板页面</title>
+</head>
+<body>
+    <h3>当前为test2方法的模板页面</h3>
+    {$name}
+    <hr>
+    {$age}
+    <hr>
+    {$sex}
+    <hr>
+    {$salary}
+    <hr>
+    <h3>输出数组</h3>
+    {$goods.id}
+    {$goods.name}
+    {$goods.price}
+    {$goods['model']}
+    <h3>输出对象</h3>
+    {$info->col}
+    {$info->le}
+    <h3>输出常量</h3>
+    {$Think.const.SITE_NAME}
+    <h3>输出系统常量</h3>
+    {$Think.const.PHP_VERSION}
+    <h3>输出系统变量</h3>
+    {$Think.server.php_self}<br>
+  
+   <hr>
+   {$Think.config.database.hostname}
+   <h3>输出请求变量</h3>
+{$Request.get.name}
+{$Request.param.name}<br>
+{$Request.path}<br>
+{$Request.root}<br>
+{$Request.root.true}<br>
+
+</body>
+</html>
