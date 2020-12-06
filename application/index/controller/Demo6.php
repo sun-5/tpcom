@@ -46,7 +46,11 @@ class Demo6 extends Controller{
         return $this->view->fetch();//渲染到模板页面
     }
     public function test4(){
-        
+        //获取分页要调用查询类中的paginate(num)方法
+        //每页10条
+        $data = \app\index\model\Student::paginate(10); 
+        $this->view->assign('data',$data);
+        return $this->view->fetch(); 
     }
 
 

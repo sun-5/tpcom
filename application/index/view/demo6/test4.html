@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$title|default='test3模板页面'}</title>
+
+    <link rel="stylesheet" href=" /static/css/bootstrap.min.css">
+    <script src="/static/js/jquery.min.js"> </script>
+    <script src="/static/js/bootstrap.min.js"> </script>
+
+</head>
+
+<body>
+    <h3>当前为test3方法的模板页面</h3>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class='text-center'>学生信息表</h2>
+                <table class='table table-default table-bordered table-hover text-center'>
+                    <tr class='bg-primary'  >
+                        <td>ID</td>
+                        <td>姓名</td>
+                        <td>性别</td>
+                        <td>年龄</td>
+                        <td>邮箱</td>
+                    </tr>
+                    {volist name="data" id="list"}
+                    <tr>
+                        <td>{$list.id}</td>
+                        <td>{$list.name}</td>
+                        <td>{$list.sex}</td>
+                        <td>
+                            {if $list.age < 18 }
+                            <span style="color:red">未成年</span>
+                            {else/}
+                            <span style="color:blue">成年</span>
+                            {/if}
+                        </td>
+                        <td>{$list.email}</td>
+                    </tr>
+                    {/volist}
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+            <div class='text-center'>
+                {$data|raw}
+            </div>
+          
+        </div>
+    </div>
+</body>
+
+</html>
